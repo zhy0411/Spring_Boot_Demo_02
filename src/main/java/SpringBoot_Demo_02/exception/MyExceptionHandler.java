@@ -1,4 +1,8 @@
 package SpringBoot_Demo_02.exception;
+//<!--            <groupId>io.springfox</groupId>-->
+//<!--            <artifactId>springfox-swagger2</artifactId>-->
+//<!--            <version>2.9.2</version>-->
+//<!--        </dependency>-->
 
 import SpringBoot_Demo_02.entity.JsonResult;
 import SpringBoot_Demo_02.entity.JsonResultData;

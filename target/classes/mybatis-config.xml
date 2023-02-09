@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuratio是核心配置文件-->
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <!--            transactionManager：事务管理-->
+            <transactionManager type="JDBC"/>
+            <!--            dataSource中包含数据库相关配置-->
+            <dataSource type="POOLED">
+                <!--               driver：数据库驱动com.mysql.jdbc.Driver -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--                url:数据库连接地址
+                                    useSSL=false 安全连接,只有当由安全证书时才能用true
+                                    useUnicode=true  Unicode编码
+                                    characterEncoding=UTF-8   字符为UTF-8格式
+                                    serverTimezone=GMT    设置时区
+                                    &符要用转义字符&amp;
+                                    -->
+                <property name="url" value="jdbc:mysql://localhost:3306/hardware?useSSL=false&amp;useEncoding=false&amp;characterEncoding=UTF-8&amp;serverTimezone=GMT"/>
+                <!--               username:用户名-->
+                <property name="username" value="root"/>
+                <!--                password：数据库连接密码-->
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--    每个Mapper.xml都需要在Mybatis核心配置文件中注册-->
+    <mappers>
+        <mapper resource="mapper/AdminMapper.xml"/>
+        <mapper resource="mapper/SlideMapper.xml"/>
+    </mappers>
+
+</configuration>
