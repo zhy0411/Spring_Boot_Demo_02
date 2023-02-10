@@ -1,6 +1,6 @@
 package SpringBoot_Demo_02.service.impl;
 
-import SpringBoot_Demo_02.service.SlideMapper;
+import SpringBoot_Demo_02.dao.SlideMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

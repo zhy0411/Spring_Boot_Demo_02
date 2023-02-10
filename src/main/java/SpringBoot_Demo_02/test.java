@@ -2,7 +2,7 @@ package SpringBoot_Demo_02;
 
 
 import SpringBoot_Demo_02.entity.Slide;
-import SpringBoot_Demo_02.service.SlideMapper;
+import SpringBoot_Demo_02.dao.SlideMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

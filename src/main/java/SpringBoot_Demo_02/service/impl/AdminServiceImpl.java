@@ -1,7 +1,7 @@
 package SpringBoot_Demo_02.service.impl;
 
 import SpringBoot_Demo_02.entity.Admin;
-import SpringBoot_Demo_02.service.AdminMapper;
+import SpringBoot_Demo_02.dao.AdminMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
