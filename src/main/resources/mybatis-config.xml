@@ -19,11 +19,11 @@
                                     serverTimezone=GMT    设置时区
                                     &符要用转义字符&amp;
                                     -->
-                <property name="url" value="jdbc:mysql://localhost:3306/hardware?useSSL=false&amp;useEncoding=false&amp;characterEncoding=UTF-8&amp;serverTimezone=GMT"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/Hinge_db?useSSL=false&amp;useEncoding=false&amp;characterEncoding=UTF-8&amp;serverTimezone=GMT"/>
                 <!--               username:用户名-->
                 <property name="username" value="root"/>
                 <!--                password：数据库连接密码-->
-                <property name="password" value="root"/>
+                <property name="password" value="Zhy20020410@"/>
             </dataSource>
         </environment>
     </environments>

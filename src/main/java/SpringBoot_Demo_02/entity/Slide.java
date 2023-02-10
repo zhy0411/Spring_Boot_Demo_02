@@ -1,4 +1,4 @@
-package generator.domain;
+package SpringBoot_Demo_02.entity;
 
 import java.io.Serializable;
 import lombok.Data;

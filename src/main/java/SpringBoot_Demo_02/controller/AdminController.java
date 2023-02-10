@@ -1,6 +1,6 @@
 package SpringBoot_Demo_02.controller;
 
-import generator.service.AdminServiceImpl;
+import SpringBoot_Demo_02.service.impl.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

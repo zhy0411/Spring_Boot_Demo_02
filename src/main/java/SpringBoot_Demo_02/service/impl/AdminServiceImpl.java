@@ -1,7 +1,7 @@
-package generator.service;
+package SpringBoot_Demo_02.service.impl;
 
-import generator.domain.Slide;
-import generator.mapper.SlideMapper;
+import SpringBoot_Demo_02.entity.Admin;
+import SpringBoot_Demo_02.service.AdminMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -12,10 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @Service
-public class SlideServiceImpl {
-    private SlideMapper mapper;
+public class AdminServiceImpl {
 
-    public SlideServiceImpl(){
+    private AdminMapper adminMapper;
+
+    public AdminServiceImpl(){
         InputStream in= null;
         try {
             in = Resources.getResourceAsStream("mybatis-config.xml");
@@ -24,6 +25,15 @@ public class SlideServiceImpl {
         }
         SqlSessionFactory factory= new SqlSessionFactoryBuilder().build(in);
         SqlSession session=factory.openSession();
-        SlideMapper mapper=session.getMapper(SlideMapper.class);
+        AdminMapper mapper=session.getMapper(AdminMapper.class);
     }
+
+    public boolean login(String id,String password){
+        Admin a=adminMapper.selectByPrimaryKey(id);
+        if(a!=null && a.getPassword()==password){
+            return true;
+        }
+        return false;
+    }
+
 }

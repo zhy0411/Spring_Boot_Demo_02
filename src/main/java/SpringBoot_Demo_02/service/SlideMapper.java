@@ -1,7 +1,6 @@
-package generator.mapper;
+package SpringBoot_Demo_02.service;
 
-import generator.domain.Slide;
-import org.apache.ibatis.annotations.Insert;
+import SpringBoot_Demo_02.entity.Slide;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,7 +10,7 @@ import java.util.List;
 * @author bai
 * @description 针对表【slide】的数据库操作Mapper
 * @createDate 2023-02-09 19:57:58
-* @Entity generator.domain.Slide
+* @Entity SpringBoot_Demo_02.entity.Slide
 */
 public interface SlideMapper {
 

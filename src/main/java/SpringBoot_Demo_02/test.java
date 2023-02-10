@@ -1,24 +1,19 @@
 package SpringBoot_Demo_02;
 
 
-import generator.domain.Admin;
-import generator.domain.Slide;
-import generator.mapper.AdminMapper;
-import generator.mapper.SlideMapper;
-import generator.service.AdminServiceImpl;
+import SpringBoot_Demo_02.entity.Slide;
+import SpringBoot_Demo_02.service.SlideMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import SpringBoot_Demo_02.config.DataConfig;
 import SpringBoot_Demo_02.config.JdbcInfo;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;

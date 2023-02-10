@@ -1,6 +1,6 @@
-package generator.mapper;
+package SpringBoot_Demo_02.service;
 
-import generator.domain.Admin;
+import SpringBoot_Demo_02.entity.Admin;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Select;
 * @author bai
 * @description 针对表【Admin】的数据库操作Mapper
 * @createDate 2023-02-09 18:52:06
-* @Entity generator.domain.Admin
+* @Entity SpringBoot_Demo_02.entity.Admin
 */
 public interface AdminMapper {
 
