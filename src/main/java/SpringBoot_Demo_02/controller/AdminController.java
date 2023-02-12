@@ -7,14 +7,18 @@ import SpringBoot_Demo_02.exception.MyException;
 import SpringBoot_Demo_02.service.impl.AdminServiceImpl;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+@Controller
 public class AdminController{
     @Autowired
     private AdminServiceImpl service;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @ResponseBody
     public JsonResult login(String id, String password){//JsonResult返回json格式
         if(id==""||password==""){
             MyException.display(MSG.PARAMS_ERROR);

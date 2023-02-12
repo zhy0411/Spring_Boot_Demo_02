@@ -22,7 +22,7 @@ spring:
 
 batis:
   # 指定别名设置的包为所有entity
-  type-aliases-package: SpringBoot_demo_01.entity
+  type-aliases-package: SpringBoot_Demo_02.entity
   configuration:
     map-underscore-to-camel-case: true # 驼峰命名规范spring:
 

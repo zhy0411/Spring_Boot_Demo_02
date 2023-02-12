@@ -2,6 +2,7 @@ package SpringBoot_Demo_02.dao;
 
 import SpringBoot_Demo_02.entity.Admin;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,6 +12,7 @@ import org.apache.ibatis.annotations.Select;
 * @createDate 2023-02-09 18:52:06
 * @Entity SpringBoot_Demo_02.entity.Admin
 */
+@Mapper
 public interface AdminMapper {
 
     @Insert(value = "INSERT INTO Admin (id,password) VALUES (#{admin.id},#{admin.password})")
