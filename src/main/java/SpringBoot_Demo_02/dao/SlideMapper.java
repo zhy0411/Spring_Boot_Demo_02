@@ -1,11 +1,9 @@
 package SpringBoot_Demo_02.dao;
 
 import SpringBoot_Demo_02.entity.Slide;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+
 import java.util.List;
-import org.apache.ibatis.annotations.Insert;
 
 import java.util.List;
 
@@ -94,7 +92,8 @@ public interface SlideMapper {
             "#{slide.characteristic},#{slide.application},#{slide.model},#{slide.life},#{slide.size},#{slide.url})")
     Boolean insert(@Param("slide")Slide slide);
 
-
+    @Delete(value = "delete from slide where id=#{id}")
+    Boolean deleteById(@Param("id")String id);
 
 
 }

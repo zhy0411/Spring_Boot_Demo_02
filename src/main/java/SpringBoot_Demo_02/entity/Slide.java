@@ -69,6 +69,7 @@ public class Slide implements Serializable {
      */
     private String url;
 
+
     private static final long serialVersionUID = 1L;
 
     @Override

@@ -7,6 +7,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,6 +17,8 @@ import java.util.List;
 
 @Service
 public class SlideServiceImpl {
+
+    @Autowired
     private SlideMapper mapper;
 
     public SlideServiceImpl(){
@@ -67,11 +70,19 @@ public class SlideServiceImpl {
     }
 
     public boolean InsertSlide(Slide slide){
-        slide.setId(LocalDateTime.now().toString());
         if(mapper.insert(slide)){
             return true;
         }else {
             return false;
         }
     }
+
+    public boolean DeleteById(String id){
+        if (mapper.deleteById(id)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }
