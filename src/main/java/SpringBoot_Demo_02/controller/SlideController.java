@@ -6,24 +6,16 @@ import SpringBoot_Demo_02.entity.Slide;
 import SpringBoot_Demo_02.exception.MSG;
 import SpringBoot_Demo_02.exception.MyException;
 import SpringBoot_Demo_02.service.impl.SlideServiceImpl;
-import com.google.gson.Gson;
-import com.mysql.cj.xdevapi.JsonArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageFilter;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class SlideController {
@@ -162,17 +154,17 @@ public class SlideController {
 
 
     @RequestMapping("/addArticle")
-    public Boolean addArticle(MultipartFile mfile,String url){
-        if(mfile == null) {
+    public Boolean addArticle(MultipartFile file,String url){
+        if(file == null) {
             return false;
         }
         //获取后缀
-        String suffixName = ImageUtil.getImagePath(mfile);
+        String suffixName = ImageUtil.getImagePath(file);
         //获取新的文件名
         String newFileName = ImageUtil.getNewFileName(suffixName);
         //保存图片
-        File file = new File(ImageUtil.getNewImagePath1(url,newFileName));
-        boolean state = ImageUtil.saveImage(mfile, file);
+        File file1 = new File(ImageUtil.getNewImagePath1(url,newFileName));
+        boolean state = ImageUtil.saveImage(file, file1);
         if(state) {
             return true;
         }else {
@@ -194,7 +186,6 @@ public class SlideController {
         }
         if(service.DeleteById(id)){
             File file=new File(s.getUrl());
-            System.out.println(s.getUrl());
             deleteAllFiles(file);
             MyException.display(MSG.SUCCESS);
             return JsonResultData.success(MSG.SUCCESS);

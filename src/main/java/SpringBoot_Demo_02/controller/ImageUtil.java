@@ -24,18 +24,18 @@ public class ImageUtil {
 
     /**
      * 保存图片
-     * @param mfile
+     * @param file1
      * @param file
      * @return
      */
-    public static boolean saveImage(MultipartFile mfile , File file) {
+    public static boolean saveImage(MultipartFile file1 , File file) {
         //查看文件夹是否存在，不存在则创建
         if(!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
         try {
             //使用此方法保存必须要绝对路径且文件夹必须已存在,否则报错
-            mfile.transferTo(file);
+            file1.transferTo(file);
             return true;
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
@@ -45,7 +45,7 @@ public class ImageUtil {
 
     /**
      * 新文件名
-     * @param hz
+     * @param suffix
      * @return
      */
     public static String getNewFileName(String suffix) {
@@ -59,10 +59,6 @@ public class ImageUtil {
      * @param name
      * @return
      */
-    public static String getNewImagePath(String name) {
-        return SAVE_IMAGE_PATH+name;
-    }
-
     public static String getNewImagePath1(String path ,String name) {
         return path+"/"+name;
     }
