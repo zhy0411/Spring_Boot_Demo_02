@@ -3,6 +3,7 @@ package SpringBoot_Demo_02;
 
 import SpringBoot_Demo_02.entity.Slide;
 import SpringBoot_Demo_02.dao.SlideMapper;
+import SpringBoot_Demo_02.service.impl.MenuServiceImpl;
 import com.google.gson.Gson;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -44,7 +45,7 @@ public class test {
 //            file.mkdirs();
 //        }
 
-        System.out.println(mapper.deleteById("11"));
+//        System.out.println(mapper.deleteById("11"));
 //        Slide slide= mapper.selectByPrimaryKey("19");
 //        if(slide==null){
 //            System.out.println("null");

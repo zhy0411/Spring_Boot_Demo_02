@@ -49,8 +49,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="Slide" />
-                  <option name="tableName" value="slide" />
+                  <option name="className" value="Corporation" />
+                  <option name="tableName" value="corporation" />
                 </TableUIInfo>
               </list>
             </option>

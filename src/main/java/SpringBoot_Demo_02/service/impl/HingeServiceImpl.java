@@ -52,4 +52,5 @@ public class HingeServiceImpl implements HingeService {
             return false;
         }
     }
+
 }

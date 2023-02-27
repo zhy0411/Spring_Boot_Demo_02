@@ -161,7 +161,7 @@ public class SlideController {
     }
 
 
-    @RequestMapping("/addArticle")
+    @RequestMapping(value = "/addArticle",method = RequestMethod.POST)
     public Boolean addArticle(MultipartFile mfile,String url){
         if(mfile == null) {
             return false;

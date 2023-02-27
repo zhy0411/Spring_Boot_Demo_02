@@ -1,24 +1,23 @@
 package SpringBoot_Demo_02.service.impl;
 
-import SpringBoot_Demo_02.entity.Admin;
-import SpringBoot_Demo_02.dao.AdminMapper;
+import SpringBoot_Demo_02.dao.CorporationMapper;
+import SpringBoot_Demo_02.dao.SlideMapper;
+import SpringBoot_Demo_02.entity.Corporation;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-@Service
-public class AdminServiceImpl {
+public class CorporationServiceImpl {
 
     @Autowired
-    private AdminMapper adminMapper;
+    private CorporationMapper mapper;
 
-    public AdminServiceImpl(){
+    public CorporationServiceImpl(){
         InputStream in= null;
         try {
             in = Resources.getResourceAsStream("mybatis-config.xml");
@@ -27,15 +26,11 @@ public class AdminServiceImpl {
         }
         SqlSessionFactory factory= new SqlSessionFactoryBuilder().build(in);
         SqlSession session=factory.openSession();
-        AdminMapper mapper=session.getMapper(AdminMapper.class);
+        CorporationMapper mapper=session.getMapper(CorporationMapper.class);
     }
 
-    public boolean login(String id,String password){
-        Admin a=adminMapper.selectByPrimaryKey(id);
-        if(a!=null && a.getPassword()==password){
-            return true;
-        }
-        return false;
+    public Corporation select(){
+        return mapper.Select();
     }
 
 }

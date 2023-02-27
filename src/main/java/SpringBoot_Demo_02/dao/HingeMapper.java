@@ -30,4 +30,6 @@ public interface HingeMapper {
             "#{HingeCupInstallation},#{InstallationMaterial},#{InstallationMethod},#{ShutDownSystem},#{DampingSystem}," +
             "#{OpeningAngle},#{LargeAngleHinge},#{DoorPanelAdjustment},#{HingeBase},#{OptionalEquipment},#{Url})")
     Boolean AddHinge(Hinge hinge);
+
+
 }
