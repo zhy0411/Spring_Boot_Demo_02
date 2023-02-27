@@ -5,7 +5,6 @@ import SpringBoot_Demo_02.entity.JsonResultData;
 import SpringBoot_Demo_02.exception.MSG;
 import SpringBoot_Demo_02.exception.MyException;
 import SpringBoot_Demo_02.service.impl.AdminServiceImpl;
-import com.mysql.cj.jdbc.MysqlDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
