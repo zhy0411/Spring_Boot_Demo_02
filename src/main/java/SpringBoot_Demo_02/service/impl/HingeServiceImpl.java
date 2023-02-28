@@ -335,6 +335,6 @@ public class HingeServiceImpl implements HingeService {
 
     @Override
     public boolean UpdateHinge(Hinge hinge) {
-        return hingeMapper.updateSlide(hinge);
+        return hingeMapper.updateHinge(hinge);
     }
 }

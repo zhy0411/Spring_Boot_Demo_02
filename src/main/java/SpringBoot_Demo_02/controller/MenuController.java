@@ -49,7 +49,7 @@ public class MenuController {
      */
     @RequestMapping(value = "/addSecondMenu",method = RequestMethod.POST)
     public JsonResult addSecondMenu(String[] s){
-        boolean b=menuService.write(s);
+        boolean b=menuService.write2(s);
         if(b){
             MyException.display(MSG.ERROR);
             return JsonResultData.error(MSG.ERROR);
@@ -58,7 +58,7 @@ public class MenuController {
         return JsonResultData.success(MSG.SUCCESS);
     }
 
-
+    //添加、删除、修改1         删除、修改2
 
 
 

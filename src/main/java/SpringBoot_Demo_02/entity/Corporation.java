@@ -2,12 +2,16 @@ package SpringBoot_Demo_02.entity;
 
 import java.io.Serializable;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 
  * @TableName corporation
  */
 @Data
+@Getter
+@Setter
 public class Corporation implements Serializable {
     /**
      * 

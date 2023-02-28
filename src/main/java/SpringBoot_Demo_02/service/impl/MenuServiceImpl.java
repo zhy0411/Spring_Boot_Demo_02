@@ -18,7 +18,7 @@ public class MenuServiceImpl {
         return menuFile.read();
     }
 
-    public boolean write(String[] s){
-        return menuFile.write(s);
+    public boolean write2(String[] s){
+        return menuFile.write2(s);
     }
 }

@@ -35,4 +35,16 @@ public class CorporationServiceImpl {
         return mapper.Select();
     }
 
+    public boolean Delete(String name){
+        return mapper.Delete(name);
+    }
+
+    public boolean Insert(Corporation corporation){
+        System.out.println(corporation.toString());
+        return mapper.Insert(corporation);
+    }
+
+    public boolean Update(Corporation corporation){
+        return mapper.updateCorporation(corporation);
+    }
 }

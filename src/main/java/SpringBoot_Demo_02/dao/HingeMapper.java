@@ -99,7 +99,7 @@ public interface HingeMapper {
 
 
     @UpdateProvider(type = HongeSqlBuilder.class,method = "buildUpdateUserSql")
-    boolean updateSlide(Hinge hinge);
+    boolean updateHinge(Hinge hinge);
 
 
 

@@ -2,7 +2,9 @@ package SpringBoot_Demo_02;
 
 
 import SpringBoot_Demo_02.dao.AdminMapper;
+import SpringBoot_Demo_02.dao.CorporationMapper;
 import SpringBoot_Demo_02.entity.Admin;
+import SpringBoot_Demo_02.entity.Corporation;
 import SpringBoot_Demo_02.entity.Slide;
 import SpringBoot_Demo_02.dao.SlideMapper;
 import SpringBoot_Demo_02.service.impl.MenuServiceImpl;
@@ -39,13 +41,17 @@ public class test {
         SqlSession session=factory.openSession();
 //        AdminMapper mapper=session.getMapper(AdminMapper.class);
 //        System.out.println(mapper.insert(admin));
-        AdminMapper mapper=session.getMapper(AdminMapper.class);
+        CorporationMapper mapper=session.getMapper(CorporationMapper.class);
 //        System.out.println(mapper.selectByPrimaryKey("11").getId()+"===========");
 
-        Admin admin=new Admin();
-        admin.setId("11");
-        admin.setPassword("123456");
-        mapper.updatePassword(admin);
+        Corporation corporation=new Corporation();
+        corporation.setUrl("123");
+        corporation.setJuridical("1");
+        corporation.setAddress("sd");
+        corporation.setPhone("123");
+        corporation.setName("999");
+        corporation.setManage("951230");
+        mapper.Insert(corporation);
 //        File file=new File("img/xx");
 //        if(!file.exists()){
 //            file.mkdirs();
