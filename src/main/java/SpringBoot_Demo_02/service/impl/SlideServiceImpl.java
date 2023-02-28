@@ -85,4 +85,8 @@ public class SlideServiceImpl {
         }
     }
 
+    public boolean updateSlide(Slide slide){
+        return mapper.updateSlide(slide);
+    }
+
 }

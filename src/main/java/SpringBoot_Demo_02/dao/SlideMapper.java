@@ -2,6 +2,7 @@ package SpringBoot_Demo_02.dao;
 
 import SpringBoot_Demo_02.entity.Slide;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.jdbc.SQL;
 
 import java.util.List;
 
@@ -90,10 +91,56 @@ public interface SlideMapper {
     @Insert(value = "insert into slide(id,name,section,loads,specifications,material,characteristic,application,model,life,size,url) " +
             "values(#{slide.id},#{slide.name},#{slide.section},#{slide.loads},#{slide.specifications},#{slide.material}," +
             "#{slide.characteristic},#{slide.application},#{slide.model},#{slide.life},#{slide.size},#{slide.url})")
-    Boolean insert(@Param("slide")Slide slide);
+    boolean insert(@Param("slide")Slide slide);
 
     @Delete(value = "delete from slide where id=#{id}")
-    Boolean deleteById(@Param("id")String id);
+    boolean deleteById(@Param("id")String id);
+
+    @UpdateProvider(type = SlideSqlBuilder.class,method = "buildUpdateUserSql")
+    boolean updateSlide(Slide slide);
 
 
+
+    public class SlideSqlBuilder{
+        public String buildUpdateUserSql(final Slide slide){
+            return new SQL(){{
+                UPDATE("slide");
+                //条件写法. 判断实体对象属性是否为空 如果不为空则修改
+                if(slide.getName()!= null){
+                    SET("name=#{name}");
+                }
+                if(slide.getSection()!= null){
+                    SET("section=#{section}");
+                }
+                if(slide.getLoads()!= null){
+                    SET("loads=#{loads}");
+                }
+                if(slide.getSpecifications()!= null){
+                    SET("specifications=#{specifications}");
+                }
+                if(slide.getMaterial()!= null){
+                    SET("material=#{material}");
+                }
+                if(slide.getCharacteristic()!= null){
+                    SET("characteristic=#{characteristic}");
+                }
+                if(slide.getApplication()!= null){
+                    SET("application=#{application}");
+                }
+                if(slide.getModel()!= null){
+                    SET("model=#{model}");
+                }
+                if(slide.getLife()!= null){
+                    SET("life=#{life}");
+                }
+                if(slide.getSize()!= null){
+                    SET("size=#{size}");
+                }
+                if(slide.getUrl()!= null){
+                    SET("url=#{url}");
+                }
+                WHERE("id=#{id}");
+            }}.toString();
+        }
+    }
 }

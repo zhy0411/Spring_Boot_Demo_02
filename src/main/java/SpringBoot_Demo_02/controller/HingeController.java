@@ -3,6 +3,7 @@ package SpringBoot_Demo_02.controller;
 import SpringBoot_Demo_02.entity.Hinge;
 import SpringBoot_Demo_02.entity.JsonResult;
 import SpringBoot_Demo_02.entity.JsonResultData;
+import SpringBoot_Demo_02.entity.Slide;
 import SpringBoot_Demo_02.exception.MSG;
 import SpringBoot_Demo_02.exception.MyException;
 import SpringBoot_Demo_02.service.HingeService;
@@ -225,6 +226,21 @@ public class HingeController {
                 MyException.display(MSG.SUCCESS,hingeList);
                 return JsonResultData.success(String.valueOf(MSG.SUCCESS),hingeList);
             }
+        }
+    }
+
+    @RequestMapping(value = "/updateHinge",method = RequestMethod.POST)
+    public JsonResult UpdateSlide(Hinge hinge){
+        if(hinge==null){
+            MyException.display(MSG.PARAMS_ERROR);
+            return JsonResultData.error(MSG.PARAMS_ERROR);
+        }
+        if(hingeService.UpdateHinge(hinge)){
+            MyException.display(MSG.SUCCESS);
+            return JsonResultData.success(MSG.SUCCESS);
+        }else {
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
         }
     }
 

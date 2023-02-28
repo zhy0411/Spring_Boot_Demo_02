@@ -8,6 +8,7 @@ import SpringBoot_Demo_02.exception.MyException;
 import SpringBoot_Demo_02.service.impl.SlideServiceImpl;
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.JsonArray;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -247,6 +248,21 @@ public class SlideController {
         }
         MyException.display(MSG.SUCCESS);
         return JsonResultData.success(slide);
+    }
+
+    @RequestMapping(value = "/updateSlide",method = RequestMethod.POST)
+    public JsonResult UpdateSlide(Slide slide){
+        if(slide==null){
+            MyException.display(MSG.PARAMS_ERROR);
+            return JsonResultData.error(MSG.PARAMS_ERROR);
+        }
+        if(service.updateSlide(slide)){
+            MyException.display(MSG.SUCCESS);
+            return JsonResultData.success(MSG.SUCCESS);
+        }else {
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
     }
 
 }

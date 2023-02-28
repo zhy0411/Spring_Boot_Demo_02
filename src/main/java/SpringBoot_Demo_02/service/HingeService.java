@@ -41,4 +41,6 @@ public interface HingeService {
     List<Hinge> FindHingeBYOptionalEquipment(String OptionalEquipment);
 
     Hinge FindHingeById(String id);
+
+    boolean UpdateHinge(Hinge hinge);
 }

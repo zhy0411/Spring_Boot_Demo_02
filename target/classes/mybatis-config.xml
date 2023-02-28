@@ -11,7 +11,7 @@
             <!--            dataSource中包含数据库相关配置-->
             <dataSource type="POOLED">
                 <!--               driver：数据库驱动com.mysql.jdbc.Driver -->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <!--                url:数据库连接地址
                                     useSSL=false 安全连接,只有当由安全证书时才能用true
                                     useUnicode=true  Unicode编码

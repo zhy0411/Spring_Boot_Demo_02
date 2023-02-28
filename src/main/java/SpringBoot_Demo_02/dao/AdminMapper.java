@@ -1,10 +1,7 @@
 package SpringBoot_Demo_02.dao;
 
 import SpringBoot_Demo_02.entity.Admin;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
 * @author bai
@@ -16,11 +13,13 @@ import org.apache.ibatis.annotations.Select;
 public interface AdminMapper {
 
     @Insert(value = "INSERT INTO Admin (id,password) VALUES (#{admin.id},#{admin.password})")
-    int insert(@Param(value = "admin") Admin admin);
+    boolean insert(@Param(value = "admin") Admin admin);
 
     @Select(value = "select * from Admin where id=#{id}")
     Admin selectByPrimaryKey(@Param("id") String id);
 
+    @Update(value = "UPDATE Admin set password=#{admin.password} where id=#{admin.id}")
+    boolean updatePassword(@Param("admin")Admin admin);
 
 
 }

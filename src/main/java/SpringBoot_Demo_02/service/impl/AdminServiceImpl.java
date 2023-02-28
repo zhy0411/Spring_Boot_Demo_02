@@ -38,4 +38,12 @@ public class AdminServiceImpl {
         return false;
     }
 
+    public boolean updatePassword(Admin admin){
+        return adminMapper.updatePassword(admin);
+    }
+
+    public boolean insertAdmin(Admin admin){
+        return adminMapper.insert(admin);
+    }
+
 }

@@ -30,7 +30,7 @@ public class MenuController {
     @Autowired
     private MenuServiceImpl menuService;
 
-    @RequestMapping(value = "/list",method = RequestMethod.POST)
+    @RequestMapping(value = "/getList",method = RequestMethod.POST)
     public JsonResult GetMenu(){
         HashMap map=menuService.read();
         if(map.isEmpty()){
@@ -41,9 +41,14 @@ public class MenuController {
         return JsonResultData.success(map);
     }
 
-
-    @RequestMapping(value = "/list",method = RequestMethod.POST)
-    public JsonResult AlterMenu(String[] s){
+    /***
+     * 添加menu方法：数组下标0 写一级目录
+     *             数组下标1 写需要添加二级目录名称
+     * @param s
+     * @return
+     */
+    @RequestMapping(value = "/addSecondMenu",method = RequestMethod.POST)
+    public JsonResult addSecondMenu(String[] s){
         boolean b=menuService.write(s);
         if(b){
             MyException.display(MSG.ERROR);
@@ -54,30 +59,6 @@ public class MenuController {
     }
 
 
-
-//    @RequestMapping(value = "/list",method = RequestMethod.POST)
-//    public JsonResult GetList(){
-//        List<Hinge> hinges= hingeService.FindByAll();
-//        List<Slide> slides=slideService.SelectAll();
-//        List<List<String>> list=new ArrayList<>();
-//        List<String> stringList=new ArrayList<>();
-//        for (int i = 0; i < hinges.size(); i++) {
-//            stringList.add(hinges.get(i).getName());
-//        }
-//        list.add(stringList);
-//        stringList=new ArrayList<>();
-//        for (int i = 0; i < slides.size(); i++) {
-//            stringList.add(hinges.get(i).getName());
-//        }
-//        list.add(stringList);
-//        if(list.size()==0){
-//            MyException.display(MSG.ERROR);
-//            return JsonResultData.error(MSG.ERROR);
-//        }else {
-//            MyException.display(MSG.SUCCESS);
-//            return JsonResultData.success(list);
-//        }
-//    }
 
 
 

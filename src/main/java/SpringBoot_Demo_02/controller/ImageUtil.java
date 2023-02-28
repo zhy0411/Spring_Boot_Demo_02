@@ -62,4 +62,8 @@ public class ImageUtil {
     public static String getNewImagePath1(String path ,String name) {
         return path+"/"+name;
     }
+
+    public static String getNewImagePath(String path ,String name) {
+        return SAVE_IMAGE_PATH+"/"+path+"/"+name;
+    }
 }

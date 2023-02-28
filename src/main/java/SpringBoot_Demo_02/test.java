@@ -1,6 +1,8 @@
 package SpringBoot_Demo_02;
 
 
+import SpringBoot_Demo_02.dao.AdminMapper;
+import SpringBoot_Demo_02.entity.Admin;
 import SpringBoot_Demo_02.entity.Slide;
 import SpringBoot_Demo_02.dao.SlideMapper;
 import SpringBoot_Demo_02.service.impl.MenuServiceImpl;
@@ -37,9 +39,13 @@ public class test {
         SqlSession session=factory.openSession();
 //        AdminMapper mapper=session.getMapper(AdminMapper.class);
 //        System.out.println(mapper.insert(admin));
-        SlideMapper mapper=session.getMapper(SlideMapper.class);
+        AdminMapper mapper=session.getMapper(AdminMapper.class);
 //        System.out.println(mapper.selectByPrimaryKey("11").getId()+"===========");
 
+        Admin admin=new Admin();
+        admin.setId("11");
+        admin.setPassword("123456");
+        mapper.updatePassword(admin);
 //        File file=new File("img/xx");
 //        if(!file.exists()){
 //            file.mkdirs();
