@@ -21,4 +21,24 @@ public class MenuServiceImpl {
     public boolean write2(String[] s){
         return menuFile.write2(s);
     }
+
+    public boolean write1(String s){
+        return menuFile.write1(s);
+    }
+
+    public boolean alter1(String[] s){
+        return menuFile.alter1(s);
+    }
+
+    public boolean alter2(String[] s){
+        return menuFile.alter2(s);
+    }
+
+    public boolean delete2(String[] s){
+        return menuFile.delete2(s);
+    }
+
+    public boolean delete1(String s){
+        return menuFile.delete1(s);
+    }
 }

@@ -230,8 +230,4 @@ public class MenuFile {
     }
 
 
-    public static void main(String[] args) {
-        MenuFile file1=new MenuFile();
-        file1.delete1("qqq");
-    }
 }

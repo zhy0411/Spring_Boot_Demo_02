@@ -60,6 +60,65 @@ public class MenuController {
 
     //添加、删除、修改1         删除、修改2
 
+    @RequestMapping(value = "/addFirstMenu",method = RequestMethod.POST)
+    public JsonResult addFirstMenu(String s){
+        boolean b=menuService.write1(s);
+        if(b){
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+        MyException.display(MSG.SUCCESS);
+        return JsonResultData.success(MSG.SUCCESS);
+    }
+
+
+    @RequestMapping(value = "/alterSecondMenu",method = RequestMethod.POST)
+    public JsonResult alterSecondMenu(String[] s){
+        boolean b=menuService.alter2(s);
+        if(b){
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+        MyException.display(MSG.SUCCESS);
+        return JsonResultData.success(MSG.SUCCESS);
+    }
+
+
+    @RequestMapping(value = "/alterFirstMenu",method = RequestMethod.POST)
+    public JsonResult alterFirstMenu(String[] s){
+        boolean b=menuService.alter1(s);
+        if(b){
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+        MyException.display(MSG.SUCCESS);
+        return JsonResultData.success(MSG.SUCCESS);
+    }
+
+
+    @RequestMapping(value = "/deleteSecondMenu",method = RequestMethod.POST)
+    public JsonResult deleteSecondMenu(String[] s){
+        boolean b=menuService.delete2(s);
+        if(b){
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+        MyException.display(MSG.SUCCESS);
+        return JsonResultData.success(MSG.SUCCESS);
+    }
+
+
+    @RequestMapping(value = "/deleteFirstMenu",method = RequestMethod.POST)
+    public JsonResult deleteFirstMenu(String s){
+        boolean b=menuService.delete1(s);
+        if(b){
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+        MyException.display(MSG.SUCCESS);
+        return JsonResultData.success(MSG.SUCCESS);
+    }
+
 
 
 }
