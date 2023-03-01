@@ -2,6 +2,7 @@ package SpringBoot_Demo_02.entity;
 
 import java.io.Serializable;
 
+import io.swagger.annotations.ApiModelProperty;
 import jdk.nashorn.internal.objects.annotations.Setter;
 import lombok.Data;
 
@@ -19,51 +20,61 @@ public class Slide implements Serializable {
     /**
      * 
      */
+    @ApiModelProperty("名字")
     private String name;
 
     /**
      * 
      */
+    @ApiModelProperty("节数")
     private String section;
 
     /**
      * 
      */
+    @ApiModelProperty("负载")
     private String loads;
 
     /**
      * 
      */
+    @ApiModelProperty("规格")
     private String specifications;
 
     /**
      * 
      */
+    @ApiModelProperty("材料")
     private String material;
 
     /**
      * 
      */
+    @ApiModelProperty("特点")
     private String characteristic;
 
     /**
      * 
      */
+    @ApiModelProperty("应用")
     private String application;
 
     /**
      * 
      */
+    @ApiModelProperty("型号")
     private String model;
 
     /**
      * 
      */
+    @ApiModelProperty("寿命")
     private String life;
 
     /**
      * 
      */
+    @ApiModelProperty("厚度")
     private String size;
 
     /**

@@ -1,6 +1,8 @@
 package SpringBoot_Demo_02.entity;
 
 import java.io.Serializable;
+
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,26 +18,33 @@ public class Corporation implements Serializable {
     /**
      * 
      */
+    @ApiModelProperty("公司名称")
     private String name;
 
     /**
      * 
      */
+    @ApiModelProperty("公司地址")
+
     private String address;
 
     /**
      * 
      */
+
+    @ApiModelProperty("公司法人")
     private String juridical;
 
     /**
      * 
      */
+    @ApiModelProperty("联系方式")
     private String phone;
 
     /**
      * 
      */
+    @ApiModelProperty("经营范围")
     private String manage;
 
     /**

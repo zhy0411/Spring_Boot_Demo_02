@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-@Mapper
+
 public class MenuFile {
     private File file=new File("/opt/dome/Spring_Boot_Demo_02/Menu/menu.txt");
     public MenuFile(){

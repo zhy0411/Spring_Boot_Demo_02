@@ -52,4 +52,19 @@ public class AdminController{
     }
 
 
+    @RequestMapping(value = "/insertAdmin",method = RequestMethod.POST)
+    public JsonResult insertAdmin(Admin admin){
+        if(admin==null){
+            MyException.display(MSG.PARAMS_ERROR);
+            return JsonResultData.error(MSG.PARAMS_ERROR);
+        }
+        if (service.insertAdmin(admin)){
+            MyException.display(MSG.SUCCESS);
+            return JsonResultData.success(MSG.SUCCESS);
+        }else {
+            MyException.display(MSG.ERROR);
+            return JsonResultData.error(MSG.ERROR);
+        }
+    }
+
 }

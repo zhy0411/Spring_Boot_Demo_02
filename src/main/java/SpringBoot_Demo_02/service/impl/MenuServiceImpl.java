@@ -2,12 +2,13 @@ package SpringBoot_Demo_02.service.impl;
 
 import SpringBoot_Demo_02.dao.MenuFile;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
+@Service
 public class MenuServiceImpl {
 
-    @Autowired
     private MenuFile menuFile;
 
     public MenuServiceImpl(){

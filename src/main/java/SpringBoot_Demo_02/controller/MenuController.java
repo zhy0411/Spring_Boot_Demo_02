@@ -11,6 +11,7 @@ import SpringBoot_Demo_02.service.impl.MenuServiceImpl;
 import SpringBoot_Demo_02.service.impl.SlideServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
+@Controller
 public class MenuController {
 
     @Autowired
